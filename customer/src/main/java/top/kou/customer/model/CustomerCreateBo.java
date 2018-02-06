@@ -2,7 +2,7 @@ package top.kou.customer.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class CustomerBo {
+public class CustomerCreateBo {
     @NotEmpty(message = "Username Cannot Be Empty")
     private String name;
     private String email;

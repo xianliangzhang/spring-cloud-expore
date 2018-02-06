@@ -14,7 +14,7 @@
     </parent>
 
     <properties>
-        <spring.boot.mainclass>top.kou.user.Application</spring.boot.mainclass>
+        <spring.boot.mainclass>top.kou.customer.Application</spring.boot.mainclass>
     </properties>
 
     <dependencies>

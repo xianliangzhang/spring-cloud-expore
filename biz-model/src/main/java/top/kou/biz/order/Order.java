@@ -1,14 +1,30 @@
 package top.kou.biz.order;
 
-import top.kou.biz.user.User;
+import top.kou.biz.customer.Customer;
+import top.kou.biz.sequence.Sequencer;
 
-import java.math.BigDecimal;
-import java.util.Objects;
+import java.util.Collections;
+import java.util.Set;
 
 public class Order {
     private Integer id;
-    private User user;
-    private BigDecimal amount;
+    private Customer customer;
+    private Set<OrderItem> items = Collections.emptySet();
+
+    public Order() {
+        this.id = Sequencer.getNextSequence();
+    }
+
+    public Order(Customer customer, Set<OrderItem> items) {
+        this.id = Sequencer.getNextSequence();
+        this.customer = customer;
+        this.items = items;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("{id=%d, customer=%s, items=%s}", id, customer, items);
+    }
 
     public Integer getId() {
         return id;
@@ -18,24 +34,19 @@ public class Order {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public BigDecimal getAmount() {
-        return amount;
+    public Set<OrderItem> getItems() {
+        return items;
     }
 
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Order[id=%d, user=%s, amount=%s]", id, Objects.toString(user), amount);
+    public void setItems(Set<OrderItem> items) {
+        this.items = items;
     }
 }

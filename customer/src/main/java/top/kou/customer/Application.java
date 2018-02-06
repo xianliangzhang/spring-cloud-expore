@@ -1,4 +1,4 @@
-package top.kou.user;
+package top.kou.customer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
