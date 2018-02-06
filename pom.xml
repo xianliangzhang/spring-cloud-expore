@@ -42,6 +42,7 @@
 		<module>customer</module>
 		<module>order</module>
 		<module>product</module>
+		<module>config</module>
 	</modules>
 
 </project>
