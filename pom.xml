@@ -37,12 +37,12 @@
 	</dependencyManagement>
 
 	<modules>
+		<module>config-server</module>
+		<module>eureka-server</module>
 		<module>biz-model</module>
-		<module>eureka</module>
 		<module>customer</module>
 		<module>order</module>
 		<module>product</module>
-		<module>config</module>
 	</modules>
 
 </project>
