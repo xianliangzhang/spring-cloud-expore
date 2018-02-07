@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestConfigController {
 
-    @Value("${application.node}")
-    private String appNode;
+    @Value("${neo.hello}")
+    private String neoHello;
 
     @RequestMapping("/config/get")
     public String getConfig() {
-        return appNode;
+        return neoHello;
     }
 }

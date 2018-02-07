@@ -1,8 +1,8 @@
 
 Service     Port
 --------------------
-config-server      7000
 eureka-server      8000
-customer    8010
-product     8020
-order       8030
+config-server      8010
+customer           8110
+product            8120
+order              8130

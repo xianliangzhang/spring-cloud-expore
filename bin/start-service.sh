@@ -14,8 +14,8 @@ if [ ! -f "$jar_path$jar_file" ] ; then
   exit 1
 fi
 
-if [ "$(jps -lv | grep $service_name)" ]; then
-  jps -lv | grep $service_name | awk '{print $1}' | xargs -t kill
-fi
+#if [ "$(jps -lv | grep $service_name)" ]; then
+#  jps -lv | grep $service_name | awk '{print $1}' | xargs -t kill
+#fi
 
-java ${java_ops} -jar "$jar_path$jar_file" > /dev/null 2>&1 &
+java ${java_ops} -jar "$jar_path$jar_file" $2 > /dev/null 2>&1 &
