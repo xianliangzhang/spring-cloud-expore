@@ -1,6 +1,8 @@
 #!/bin/sh
 
 jar_file=$1
+kill_exists_process=$2
+
 service_name=${jar_file%-0.0.1*}
 java_ops="-Xms64m -Xmx64m -XX:+PrintCommandLineFlags -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${service_name}.oom"
 
@@ -14,8 +16,13 @@ if [ ! -f "$jar_path$jar_file" ] ; then
   exit 1
 fi
 
-#if [ "$(jps -lv | grep $service_name)" ]; then
-#  jps -lv | grep $service_name | awk '{print $1}' | xargs -t kill
-#fi
+if [[ "true" == "$kill_exists_process" && "" != "$(jps -lv | grep $service_name)" ]]; then
+  jps -lv | grep $service_name | awk '{print $1}' | xargs -t kill
+fi
 
-java ${java_ops} -jar "$jar_path$jar_file" $2 > /dev/null 2>&1 &
+java ${java_ops} -jar "$jar_path$jar_file" > /dev/null 2>&1 &
+if [ $? -eq 0 ]; then
+  echo started $!
+else
+  echo Start Failed!
+fi
