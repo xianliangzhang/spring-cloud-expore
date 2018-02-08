@@ -9,7 +9,6 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class Application {
-
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
