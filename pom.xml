@@ -39,10 +39,11 @@
 	<modules>
 		<module>config-server</module>
 		<module>eureka-server</module>
+		<module>zuul-server</module>
 		<module>biz-model</module>
 		<module>customer</module>
-		<module>order</module>
 		<module>product</module>
+		<module>order</module>
 	</modules>
 
 </project>
