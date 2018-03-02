@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <start-class>top.kou.product.Application</start-class>
+        <start-class>top.kou.product.ProductApplication</start-class>
     </properties>
 
     <dependencies>
@@ -23,6 +23,11 @@
             <groupId>top.kou</groupId>
             <artifactId>biz-model</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>1.5.6</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
